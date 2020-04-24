@@ -14,7 +14,7 @@
 ## 有意思的
 
 1. [self-reproducing](./go/self-reproducing/README.md) golang, 自我打印, 自我复制
-2. [素数打印](./go/prime/README.md) golang, 素数, 数学
-3. [look and say sequence](./go/las/README.md) golang, look-and-say, 康威, 数学
+2. [素数打印](./go/prime) golang, 素数, 数学
+3. [look and say sequence](./go/las) golang, look-and-say, 康威, 数学
 
 ## [正则表达式](./regex.md)
