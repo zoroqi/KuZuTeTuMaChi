@@ -1,6 +1,6 @@
 # redis 配置
 
-## redis 链接不上问题总结
+redis 链接不上问题总结
 
 1. 启动了`protected-mode`模式
     1. 关联参数

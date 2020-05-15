@@ -1,4 +1,4 @@
-# 不常用
+# c/c++
 
 `ldd` 查看动态库查看. 动态库, 查找, 依赖, 依赖库, 列表, prints the shared object
 
