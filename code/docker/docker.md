@@ -18,3 +18,11 @@ docker run -itd xxxx /bin/bash
 
 docker attach CONTAINER ID
 ```
+
+* 挂载磁盘
+
+```
+docker run -v local_path:image_path xxxx
+```
+
+
