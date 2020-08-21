@@ -25,4 +25,28 @@ docker attach CONTAINER ID
 docker run -v local_path:image_path xxxx
 ```
 
+## 基础操作
 
+* 删除本地镜像
+
+```
+docker rmi IMAGE_ID
+```
+
+1. 提示无法删除, 可能需要先删除对应`containers`
+
+* 删除运行过的容器信息
+```
+docker rmi containers_id
+```
+
+* 获得当前运行中的容器
+
+```
+docker ps
+```
+
+* 显示所有容器, 包括未运行的
+```
+docker ps -a
+```
