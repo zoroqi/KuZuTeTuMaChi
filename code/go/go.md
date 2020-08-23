@@ -45,3 +45,11 @@ js(WebAssembly) | wasm | |
 ### 代码辅助工具
 `GOSSAFUNC=func_name go build` 生成代码编译过程内容, 从代码到汇编的转换过程
 
+### 内存分配
+
+查看分配内存次数, 是次数不是内存大小
+```
+// runs >= 1, 代表执行次数+1. runs==1, 共执行2次, 一次基本运行, 第二次之后进行统计.
+// f内尽量不要有日志或Print等操作, 这些会额外申请内存, 影响结果.
+testing.AllocsPerRun(runs,func f())
+```
