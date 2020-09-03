@@ -22,3 +22,13 @@ git checkout branch-name path
 # 显示branch1中排除branch2的日志记录
 git log branch1 ^branch2
 ```
+
+* 清理远程已经删除的分支
+
+```
+git remote prune origin
+```
+
+* 批量修改log日志中的提交人
+
+[sh](/code/shell/modify_git_commit_user.sh)
