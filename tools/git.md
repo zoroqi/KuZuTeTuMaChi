@@ -37,7 +37,7 @@ git remote prune origin
 
 `git branch | sort | while read name; do echo -en "$name\t\t"; git show -q --pretty=format:'%ai %an %s %n' $name ; done | sort -k2r`
 
-有个小bug看了当前分支, 尽量在主分支上执行. 暂时没找到branch如何不打印`*`这个输出方式
+有个小bug无法查看当前分支, 尽量在主分支上执行. 暂时没找到branch如何不打印`*`输出方式
 
 * log的格式输出说明
 
