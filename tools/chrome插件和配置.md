@@ -1,4 +1,4 @@
-# 常用chrome插件
+# chrome插件和配置
 
 1. [Adblock Plus](https://chrome.google.com/webstore/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb)
 
@@ -57,3 +57,13 @@ github插件, 看代码方便一些
 14. [Google Mail Checker](https://chrome.google.com/webstore/detail/google-mail-checker/mihcahmgecmbnbcchbopgniflfhgnkff)
 
 google也是蛋疼, index竟然又死了, 所以切回了 gmail
+
+15. url隐藏功能, 操作隐藏域名以外内容. 关闭 omnibox中部分参数
+
+```
+chrome://flags
+修改为 disabled
+#omnibox-ui-reveal-steady-state-url-path-query-and-ref-on-hover
+#omnibox-ui-sometimes-elide-to-registrable-domain
+#omnibox-ui-hide-steady-state-url-path-query-and-ref-on-interaction
+```
