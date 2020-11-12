@@ -1,6 +1,6 @@
 # go
 
-`GOOS=linux GOARCH=amd64`交叉编译参数
+`GOOS=linux GOARCH=amd64 go build`交叉编译参数
 
 `GOOS`编译系统, `GOARCH`指令集, `GOARM`arm版本
 
