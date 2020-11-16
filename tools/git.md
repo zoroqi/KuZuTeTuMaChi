@@ -87,3 +87,15 @@ git remote prune origin
 | %x00 | print a byte from a hex code |
 | %w(\[ \[, \[, \]\]\]) | switch line wrapping, like the \-w option of git\-shortlog(1). |
 
+* `git bisect` 查找问题修改
+
+git bisect是一个很有用的命令，用来查找哪一次代码提交引入了错误。以二分查找方式来查找那次引入的问题.
+
+假设commitid, 1,2,3,4,5,6,7,8,9,10, HEAD
+
+执行流程
+1. `git bisect start HEAD 1`, `git bisect start 起点commit 终点commit`
+2. `git bisect good` 5没有问题, 哪问题就出现在5\~HEAD
+3. `git bisect bad` 7有问题, 哪问题出现在5\~7
+4. 反复执行2\~3直到找到问题
+5. `git bisect reset`结束
