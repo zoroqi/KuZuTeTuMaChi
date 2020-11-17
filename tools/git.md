@@ -87,3 +87,8 @@ git remote prune origin
 | %x00 | print a byte from a hex code |
 | %w(\[ \[, \[, \]\]\]) | switch line wrapping, like the \-w option of git\-shortlog(1). |
 
+* `git clone --depth=1` 浅克隆, 只克隆最新代码
+
+无法执行push和commit, 但看最新代码和编译是够用了
+
+* `git clone --branch tag` 克隆指定标签代码
