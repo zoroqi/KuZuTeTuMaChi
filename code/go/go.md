@@ -1,6 +1,8 @@
 # go
 
-`GOOS=linux GOARCH=amd64`交叉编译参数
+### 交叉变异 GOOS
+
+`GOOS=linux GOARCH=amd64 go build`交叉编译参数
 
 `GOOS`编译系统, `GOARCH`指令集, `GOARM`arm版本
 
@@ -12,6 +14,9 @@ freebsd | 386 / amd64 | >= FreeBSD 7 |
 windows | 386 / amd64 | >= Windows 2000 |
 js(WebAssembly) | wasm | |
 
+
+### go依赖
+
 `go mod graph` 查看依赖关系
 
 `go list -m all` 查看准确依赖版本
@@ -20,8 +25,11 @@ js(WebAssembly) | wasm | |
 
 `go mod why -m github.com/xxx/xxx` 指定package依赖路径
 
-`go build ldflags " -X main.Version=1.0.0"`可以添加一些固定参数. 对应的代码需要存在变量
+### 编译过程中写入固定参数 `-ldflags -X`
 
+`go build -ldflags " -X main.Version=1.0.0"`可以添加一些固定参数. 对应的代码需要存在变量.
+
+代码中需要`main.Version`变量, 变量不能是const的, const不会导致编译错误, 只是无法赋值.
 
 ### 测试
 
@@ -30,6 +38,7 @@ js(WebAssembly) | wasm | |
 `-run` 执行指定的测试代码, 支持通配符
 
 #### 基准测试
+
 `-bench` 执行指定的`Benchmark`测试代码, 支持通配符
 
 `-count` 执行次数
@@ -42,10 +51,10 @@ js(WebAssembly) | wasm | |
 
 `benchstat`基准测试工具统计分析
 
-### 代码辅助工具
-`GOSSAFUNC=func_name go build` 生成代码编译过程内容, 从代码到汇编的转换过程
+### 代码辅助工具 GOSSAFUNC
+`GOSSAFUNC=func_name go build` 生成代码编译过程内容, 从代码到汇编的转换过程, 对学习AST一类的很有帮助
 
-### 内存分配
+### 内存分配 `testing.AllocsPerRun`
 
 查看分配内存次数, 是次数不是内存大小
 ```
@@ -68,3 +77,18 @@ testing.AllocsPerRun(runs,func f())
 v    2        &&
 低   1        ||
 ```
+
+### 条件编译 `+build`
+
+可以指定要的编译文件, 针对不同系统进行处理. 不同逻辑使用不同的包也可以使用这个方案. 只是为了为了变换包, 最好使用接口实现.
+
+```golang
+// +build testtag 存在testtag进行编译
+// +build !testtag 不存在进行编译编译
+
+package // +build必须在package之上, 切存在空行, 可以有多个 +build
+```
+
+通过 `go build -tags=testtag` 可以指定tags. 多个tag的指定方式
+1. `go build -tags=test1,test2`
+2. `go build -tags="test1 test2"` 单引号也可
