@@ -16,6 +16,8 @@ mlook插件, 了解最新电子书
 
 收藏夹的搜索, 方便快捷, 不要费力找了. 地址栏 * + tab开启搜索.
 
+这里和Vimium的功能有重复, 可以不装.
+
 5. [Proxy SwitchyOmega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif)
 
 方便快捷的工具, 开发必备
@@ -26,7 +28,13 @@ mlook插件, 了解最新电子书
 
 7. [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb)
 
-vim友好插件, 方便快捷. 脱离鼠标的束缚. 对触摸板不好用的笔记本是一大救星. 我发现我买的笔记本, 触摸板都不是很好用.
+vim友好插件, 方便快捷. 脱离鼠标的束缚. 对触摸板不好用的笔记本是一大救星. 我发现我买的笔记本, 触摸板都不是很好用. mac是贼难用.
+
+插件唯一缺点不能运行在空白页.
+
+b打开bookmarks搜索
+
+o打开历史和bookmarks搜索
 
 8. [Sourcegraph](https://chrome.google.com/webstore/detail/sourcegraph/dgjhfomjieaadpoljlnidmbgkdffpack)
 
@@ -67,3 +75,25 @@ chrome://flags
 #omnibox-ui-sometimes-elide-to-registrable-domain
 #omnibox-ui-hide-steady-state-url-path-query-and-ref-on-interaction
 ```
+
+16. 屏蔽canvas功能
+```
+chrome://flags
+修改为 disabled
+#disable-accelerated-2d-canvas
+#enable-pixel-canvas-recording
+#new-canvas-2d-api
+```
+
+17. [隐私獾](https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp)
+
+隐私獾会自动学习去阻止不可见的追踪器。
+
+18. [The Great Suspender](https://chrome.google.com/webstore/detail/the-great-suspender/klbibkeccnjlkjkiokjodocebajanakg)
+
+将长期不使用的页面冻结
+
+19. [Wayback Machine](https://chrome.google.com/webstore/detail/wayback-machine/fpnmgdkabkmnadcjpehmlllkndpkmiak)
+
+查看丢失的历史备份, 数据是[互联网档案馆](https://archive.org/)提供.
+
