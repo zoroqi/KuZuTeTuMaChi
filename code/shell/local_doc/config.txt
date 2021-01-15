@@ -1,0 +1,2 @@
+https://github.com/zoroqi/my-awesome.git
+https://github.com/zoroqi/org-repositories.git
