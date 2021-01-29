@@ -113,3 +113,43 @@ git bisect是一个很有用的命令，用来查找哪一次代码提交引入�
 * 强制回滚代码 `git reset --hard origin master`
 
 * 回滚单个文件 `git checkout -- path`
+
+* 查看单文件行的变更记录 `git blame`
+
+* 合并commit `git rebase -i`, 对已经push的代码慎用, 容易玩火自焚.
+
+```
+# 合并最近两次
+git rebase -i HEAD~2
+
+# 合并指定范围内的提交, 如果不指定[endpoint]默认HEAD. 前开后闭
+git rebase -i [startpoint] [endpoint]
+```
+
+具体操作
+```
+git rebase -i HEAD~3
+
+pick 791 cccc
+pick 75c bbbb
+pick 563 aaaa
+
+# 将后几个pick -> squash
+
+pick 791 cccc
+squash 75c bbbb
+squash 563 aaaa
+
+保存, 修改commit信息
+
+如果要push可能需要添加f强制推送
+```
+
+
+* pick：保留该commit（缩写:p）
+* reword：保留该commit，但我需要修改该commit的注释（缩写:r）
+* edit：保留该commit, 但我要停下来修改该提交(不仅仅修改注释)（缩写:e）
+* squash：将该commit和前一个commit合并（缩写:s）
+* fixup：将该commit和前一个commit合并，但我不要保留该提交的注释信息（缩写:f）
+* exec：执行shell命令（缩写:x）
+* drop：我要丢弃该commit（缩写:d）
