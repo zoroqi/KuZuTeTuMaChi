@@ -1,12 +1,12 @@
 # git上的特殊命令
 
-* 统计每个人的提交量
+### 统计每个人的提交量
 ```
 git log --format='%aN' | sort -u | while read name; do echo -en "$name\t"; git log --author="$name" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }' -; done
 ```
 
 
-* check单个文件
+### check单个文件
 
 相当方便, 只要代码写的好一点, 功能独立就十分好迁移了.
 
@@ -14,7 +14,7 @@ git log --format='%aN' | sort -u | while read name; do echo -en "$name\t"; git l
 git checkout branch-name path
 ```
 
-* 查看合并分支的日志
+### 查看合并分支的日志
 
 可以在对合并后的分支进行单个分支提交记录查询.
 
@@ -23,23 +23,23 @@ git checkout branch-name path
 git log branch1 ^branch2
 ```
 
-* 清理远程已经删除的分支
+### 清理远程已经删除的分支
 
 ```
 git remote prune origin
 ```
 
-* 批量修改log日志中的提交人
+### 批量修改log日志中的提交人
 
 [执行脚本sh](/code/shell/modify_git_commit_user.sh)
 
-* 查看本地分支最后提交时间
+### 查看本地分支最后提交时间
 
 `git branch | sort | while read name; do echo -en "$name\t\t"; git show -q --pretty=format:'%ai %an %s %n' $name ; done | sort -k2r`
 
 有个小bug无法查看当前分支, 尽量在主分支上执行. 暂时没找到branch如何不打印`*`输出方式
 
-* log的格式输出说明
+### log的格式输出说明
 
 | 参数 | 说明 |
 | --- | --- |
@@ -87,13 +87,13 @@ git remote prune origin
 | %x00 | print a byte from a hex code |
 | %w(\[ \[, \[, \]\]\]) | switch line wrapping, like the \-w option of git\-shortlog(1). |
 
-* `git clone --depth=1` 浅克隆, 只克隆最新代码
+### `git clone --depth=1` 浅克隆, 只克隆最新代码
 
 无法执行push和commit, 但看最新代码和编译是够用了
 
-* `git clone --branch tag` 克隆指定标签代码
+### `git clone --branch tag` 克隆指定标签代码
 
-* `git bisect` 查找问题修改
+### `git bisect` 查找问题修改
 
 git bisect是一个很有用的命令，用来查找哪一次代码提交引入了错误。以二分查找方式来查找那次引入的问题.
 
@@ -106,17 +106,17 @@ git bisect是一个很有用的命令，用来查找哪一次代码提交引入�
 4. 反复执行2\~3直到找到问题
 5. `git bisect reset`结束
 
-* `git submodule add path` 子模块
+### `git submodule add path` 子模块
 
 可以将一个仓库加入到另一个仓库中.
 
-* 强制回滚代码 `git reset --hard origin/master`
+### 强制回滚代码 `git reset --hard origin/master`
 
-* 回滚单个文件 `git checkout -- path`
+### 回滚单个文件 `git checkout -- path`
 
-* 查看单文件行的变更记录 `git blame`
+### 查看单文件行的变更记录 `git blame`
 
-* 合并commit `git rebase -i`, 对已经push的代码慎用, 容易玩火自焚.
+### 合并commit `git rebase -i`, 对已经push的代码慎用, 容易玩火自焚.
 
 ```
 # 合并最近两次
@@ -145,7 +145,6 @@ squash 563 aaaa
 如果要push可能需要添加f强制推送
 ```
 
-
 * pick：保留该commit（缩写:p）
 * reword：保留该commit，但我需要修改该commit的注释（缩写:r）
 * edit：保留该commit, 但我要停下来修改该提交(不仅仅修改注释)（缩写:e）
@@ -153,3 +152,41 @@ squash 563 aaaa
 * fixup：将该commit和前一个commit合并，但我不要保留该提交的注释信息（缩写:f）
 * exec：执行shell命令（缩写:x）
 * drop：我要丢弃该commit（缩写:d）
+
+### 全局ignore配置
+```
+git config --global core.excludesfile ~/my_sh/dotfiles/gitignore
+```
+
+### 生成SSH公钥
+
+命令 `ssh-keygen -o`
+
+命令流程
+```
+ssh-kengen -o
+
+# 输入名称name, 没有默认id_rsa
+# 输入密码
+# 再次输入密码
+```
+
+最终文件会生成两个文件在`~/.ssh`目录中, 分别是 `name`和`name.pub`. `pub`文件就是公钥
+
+#### 配置
+
+多个公钥针对不同域名或需要进行指定配置
+
+```
+Host domain.one
+    HostName domain.one
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_rse_one
+Host domain.two
+    HostName domain.two
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_rsa_two
+```
+
+使用`ssh -T git@domain.one`进行测试
+
