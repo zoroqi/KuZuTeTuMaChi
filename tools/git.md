@@ -173,7 +173,7 @@ ssh-kengen -o
 
 最终文件会生成两个文件在`~/.ssh`目录中, 分别是 `name`和`name.pub`. `pub`文件就是公钥
 
-#### 配置
+* 配置
 
 多个公钥针对不同域名或需要进行指定配置
 
@@ -190,3 +190,17 @@ Host domain.two
 
 使用`ssh -T git@domain.one`进行测试
 
+使用`user-agent`免密
+```
+# 启动
+eval $(ssh-agent -s)
+# 添加
+ssh-add ~/.ssh/id_rsa
+```
+
+### 清理本地tag
+
+而对于新版本的git，推荐使用`git fetch --prune <remote> "+refs/tags/*:refs/tags/*"`，在fetch的同时，更新远端的tag列表。
+
+添加配置
+`git config --local --add remote.origin.fetch "+refs/tags/*:refs/tags/*"`，之后每次``git fetch –prune`，都会更新tag列表

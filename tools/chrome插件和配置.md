@@ -91,7 +91,7 @@ chrome://flags
 
 18. [The Great Suspender](https://chrome.google.com/webstore/detail/the-great-suspender/klbibkeccnjlkjkiokjodocebajanakg)
 
-将长期不使用的页面冻结
+将长期不使用的页面冻结, ~~好像安全问题被怼了~~
 
 19. [Wayback Machine](https://chrome.google.com/webstore/detail/wayback-machine/fpnmgdkabkmnadcjpehmlllkndpkmiak)
 
