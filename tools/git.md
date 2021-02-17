@@ -203,4 +203,26 @@ ssh-add ~/.ssh/id_rsa
 而对于新版本的git，推荐使用`git fetch --prune <remote> "+refs/tags/*:refs/tags/*"`，在fetch的同时，更新远端的tag列表。
 
 添加配置
-`git config --local --add remote.origin.fetch "+refs/tags/*:refs/tags/*"`，之后每次``git fetch –prune`，都会更新tag列表
+`git config --local --add remote.origin.fetch "+refs/tags/*:refs/tags/*"`，之后每次`git fetch –prune`，都会更新tag列表
+
+
+### clone或checkout部分文件
+
+单个项目过大, clone或checkout太浪费时间, 尤其是针对中国用户, 很多文档类项目不需要全部检出, 1.7版本后提供稀疏检出\(sparse checkout\)功能来实现这种操作.
+
+```shell
+git init #创建一个git项目
+git remote add origin gitpath #添加远程
+git config core.sparsecheckout true #设置为稀疏检出模式
+echo "path1/" >> .git/info/sparse-checkout #要检出的目录
+echo "path2/" >> .git/info/sparse-checkout #要检出的目录
+git pull origin master #检出, 一定要使用这种方式, 不能直接pull
+```
+
+sparse\-checkout简单规则, 类似ignore规则
+
+子目录的匹配
+在 sparse\-checkout 文件中, 如果目录名称前带斜杠，如`/docs/`,将只匹配项目根目录下的docs目录,如果目录名称前不带斜杠,如`docs/`,其他目录下如果也有这个名称的目录,如`test/docs/`也能被匹配。
+而如果写了多级目录,如`docs/05/`,则不管前面是否带有斜杠,都只匹配项目根目录下的目录,如`test/docs/05/`不能被匹配.
+
+
