@@ -226,3 +226,8 @@ sparse\-checkout简单规则, 类似ignore规则
 而如果写了多级目录,如`docs/05/`,则不管前面是否带有斜杠,都只匹配项目根目录下的目录,如`test/docs/05/`不能被匹配.
 
 
+### 打印本地所有分支最后提交时间
+
+```shell
+for k in `git branch | perl -pe s/^..//`; do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k -- | head -n 1`\\t$k; done | sort -r
+```
