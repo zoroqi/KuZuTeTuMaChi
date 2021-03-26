@@ -89,11 +89,14 @@ chrome://flags
 
 隐私獾会自动学习去阻止不可见的追踪器。
 
-18. [The Great Suspender](https://chrome.google.com/webstore/detail/the-great-suspender/klbibkeccnjlkjkiokjodocebajanakg)
+18.  [Tab Suspender](https://chrome.google.com/webstore/detail/tab-suspender/fiabciakcmgepblmdkmemdbbkilneeeh)
 
-将长期不使用的页面冻结, ~~好像安全问题被怼了~~
+将长期不使用的页面冻结, ~~[The Great Suspender](https://chrome.google.com/webstore/detail/the-great-suspender/klbibkeccnjlkjkiokjodocebajanakg) 因为项目交接导致, 安全问题被怼了~~.
 
 19. [Wayback Machine](https://chrome.google.com/webstore/detail/wayback-machine/fpnmgdkabkmnadcjpehmlllkndpkmiak)
 
 查看丢失的历史备份, 数据是[互联网档案馆](https://archive.org/)提供.
 
+20 [Hypothesis - Web & PDF Annotation](https://chrome.google.com/webstore/detail/hypothesis-web-pdf-annota/bjfhmglciegochdpefhhlphglcehbmek) 网页标注
+
+快速的网页标注, 并可以分享, 通过rss订阅自己的数据. rss地址 `https://hypothes.is/stream.rss?user={name}`, 可以通过 [facet](https://jonudell.info/h/facet) 导出

@@ -8,3 +8,9 @@
 
 工具对spring这种注解进行串联的代码可能分析效果不好. 针对1.8可能也不会太友好, 内部类太多.
 
+
+## 反编译
+
+#### [jd-gui](https://github.com/java-decompiler/jd-gui)
+
+至少是现在发现的比较好用的反编译工具`java -jar jd-gui.jar`运行, 之后就是鼠标操作了.
