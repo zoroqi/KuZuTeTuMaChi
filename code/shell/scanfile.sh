@@ -11,7 +11,7 @@
 cat $1 |while read line
 do
     array=(${line//:/ })
-    tree -N ${array[0]} > ${array[1]}
+    tree -N -f -h ${array[0]} > ${array[1]}
 done
 
 cd $2
