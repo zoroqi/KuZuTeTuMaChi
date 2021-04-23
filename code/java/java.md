@@ -90,3 +90,7 @@ java启动参数共分为三类；
 | -XX:+CMSConcurrentMTEnabled                          |  当该标志被启用时，并发的CMS阶段将以多线程执行(因此，多个GC线程会与所有的应用程序线程并行工作)。该标志已经默认开启，如果顺序执行更好，这取决于所使用的硬件，多线程执行可以通过-XX：-CMSConcurremntMTEnabled禁用。 |
 
 - [中文来源](https://www.cnblogs.com/hongdada/p/10277782.html)
+
+## 查看繁忙线程
+
+[show-busy-java-threads](./show-busy-java-threads) 源代码来源于 [oldratlee/useful-scripts](github.com/oldratlee/useful-script)
