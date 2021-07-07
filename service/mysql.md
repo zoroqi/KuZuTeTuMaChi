@@ -2,7 +2,7 @@
 
 ### 建库
 
-`create databases name;`
+`create database name;`
 
 ### 用户创建和授权
 
