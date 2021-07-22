@@ -231,3 +231,17 @@ sparse\-checkout简单规则, 类似ignore规则
 ```shell
 for k in `git branch | perl -pe s/^..//`; do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k -- | head -n 1`\\t$k; done | sort -r
 ```
+
+### grep
+
+可以快速检索文件, 可以指定分支或提交, `commit/branch:file`, 不指定目录就是全文搜索
+
+```
+git grep ""
+```
+
+### rev-list
+
+按反向时间顺序列出提交对象, 可以查询提交记录.
+
+可以过滤提交行为
