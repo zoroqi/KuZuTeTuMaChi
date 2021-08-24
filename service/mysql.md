@@ -4,6 +4,11 @@
 
 `create database name;`
 
+指定字符集
+```
+CREATE DATABASE  `name` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+```
+
 ### 用户创建和授权
 
 创建
