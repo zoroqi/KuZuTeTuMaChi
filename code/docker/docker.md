@@ -50,3 +50,24 @@ docker ps
 ```
 docker ps -a
 ```
+
+## 打包镜像
+
+```
+docker build .
+
+docker build -t image_name:tag .
+```
+
+## 上传镜像
+
+[push命令](https://docs.docker.com/engine/reference/commandline/push/)
+
+```
+docker login register(127.0.0.1:5000)
+
+docker tag image_name:tag register/iamge_name:tag
+
+docker push register/iamge_name:tag
+```
+
