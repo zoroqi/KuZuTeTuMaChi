@@ -20,6 +20,8 @@ java启动参数共分为三类；
 
 **`jinfo -flags pid` 可以查看启动参数**
 
+**`jcmd pid VM.flags 同样也可以查看启动参数`** 添加`-all`参数可以获得全量参数情况.
+
 **[部分参数列表含义-中文](./jvm参数.md)**
 
 ### jvm参数分享网站
@@ -29,8 +31,9 @@ java启动参数共分为三类；
 * [jvm参数说明](http://jvm-options.tech.xebia.fr/)
 
 
-
 ### 源码
+
+### gc相关
 
 可以在代码中搜索`globals.hpp`文件查看对应说明, 里边有相应的参数和说明. 一下截取的是jdk15的源码\(15已经移除 CMS 算法\)
 
@@ -49,8 +52,41 @@ java启动参数共分为三类；
 ./src/hotspot/share/runtime/globals.hpp
 ```
 
-
-
 ## 查看繁忙线程
 
 [show-busy-java-threads](./show-busy-java-threads) 源代码来源于 [oldratlee/useful-scripts](github.com/oldratlee/useful-script)
+
+## jdk 命令
+
+### jcmd
+
+1.7 推出的新命令.
+
+* [13 jcmd 说明](https://docs.oracle.com/en/java/javase/13/docs/specs/man/jcmd.html)
+* [17 jcmd 说明](https://docs.oracle.com/en/java/javase/17/docs/specs/man/jcmd.html)
+
+简单说明
+
+`jcmd [pid | main-class] command... | PerfCounter.print | -f filename`
+
+几个常用的 command 命令
+其中command的说明如下：
+
+| 命令 | 说明 |
+| --- | --- |
+| help | 打印帮助信息，示例：jcmd help  |
+| ManagementAgent.stop | 停止JMX Agent |
+| ManagementAgent.start\_local | 开启本地JMX Agent |
+| ManagementAgent.start | 开启JMX Agent |
+| Thread.print | 参数-l打印java.util.concurrent锁信息，相当于：jstack |
+| PerfCounter.print | 相当于：jstat -J-Djstat.showUnsupported=true -snap |
+| GC.class\_histogram | 相当于：jmap -histo |
+| GC.heap\_dump | 相当于：jmap -dump:format=b,file=xxx.bin |
+| GC.run\_finalization | 相当于：System.runFinalization() |
+| GC.run | 相当于：System.gc() |
+| VM.uptime | 参数-date打印当前时间，VM启动到现在的时候，以秒为单位显示 |
+| VM.flags | 参数-all输出全部，相当于：jinfo -flags , jinfo -flag |
+| VM.system\_properties | 相当于：jinfo -sysprops |
+| VM.command\_line | 相当于：jinfo -sysprops |
+
+
