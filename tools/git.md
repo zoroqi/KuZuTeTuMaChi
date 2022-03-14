@@ -245,3 +245,13 @@ git grep ""
 按反向时间顺序列出提交对象, 可以查询提交记录.
 
 可以过滤提交行为
+
+### filter-branch 重写历史
+
+这个命令可以将 dira 目录重写到 git 根目录, 删除无关的文件, 并保留 dira 中的所有的提交历史.
+
+```
+git filter-branch -f --subdirectory-filter dira
+```
+
+这样可以快速将某个目录从大项目拆分出来, 并保存提交历史.

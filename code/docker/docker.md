@@ -71,3 +71,10 @@ docker tag image_name:tag register/iamge_name:tag
 docker push register/iamge_name:tag
 ```
 
+## 空间使用和清理
+
+```
+docker system df // 查看
+docker system prune // 清理
+```
+
