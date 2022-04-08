@@ -39,3 +39,17 @@ REVOKE privilege ON databasename.tablename FROM 'username'@'host';
 删除密码
 
 `DROP USER 'username'@'host';`
+
+更多功能的授权, 需要 root 权限
+
+GRANT SELECT, RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'user' IDENTIFIED BY 'pw';
+
+## 查看配置文件
+
+`show variables;`
+
+查看具体配置: `show variables like 'log_bin';`
+
+也可以使用 `select @@log_bin;`. 但和上边的输出结果形式可能不同, 一个是 ON, 一个是 1
+
+
