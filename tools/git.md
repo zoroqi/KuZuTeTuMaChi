@@ -54,7 +54,7 @@ git remote prune origin
 | %ae | 作者邮箱 |
 | %aE | .mailmap 中对应的作者邮箱 |
 | %ad | –date=制定的日期格式 |
-| %aD | RFC2822 日期格式 |
+| %aD | [[RFC2822]] 日期格式 |
 | %ar | 日期格式，例如：1 day ago |
 | %at | UNIX timestamp 日期格式 |
 | %ai | ISO 8601 日期格式 |
@@ -63,7 +63,7 @@ git remote prune origin
 | %ce | 提交者邮箱 |
 | %cE | .mailmap 对应的提交者的邮箱 |
 | %cd | –data=制定的提交日期的格式 |
-| %cD | RFC2822 提交日期的格式 |
+| %cD | [[RFC2822]] 提交日期的格式 |
 | %cr | 提交日期的格式，例如：1day ago |
 | %ct | UNIX timestamp 提交日期的格式 |
 | %ci | ISO 8601 提交日期的格式 |
@@ -83,7 +83,7 @@ git remote prune origin
 | %C(color) | 制定颜色，as described in color.branch.\* config option |
 | %m | left right or boundary mark |
 | %n | 换行 |
-| %% | a raw % |
+| \%\% | a raw \% |
 | %x00 | print a byte from a hex code |
 | %w(\[ \[, \[, \]\]\]) | switch line wrapping, like the \-w option of git\-shortlog(1). |
 
