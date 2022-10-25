@@ -1,10 +1,10 @@
 ---
 id: {{DATE:YYYYMMDDHHmmss}}_{{VALUE:uuid}}
+date: "{{DATE:YYYY-MM-DD}}"
 aliases:
 - 
 category:
 - gist
-date: "{{DATE:YYYY-MM-DD}}"
 language:
 - {{VALUE:language}}
 tc:
