@@ -6,7 +6,7 @@
 
 * 余数:  `a \bmod b`   $a \bmod b$ , `x \equiv a \pmod{b}` $x \equiv a \pmod{b}$
 
-* 上标:   ` m^2` $m^2$ , `m^{22}` $m^{22}$
+* 上标:  `m^2` $m^2$ , `m^{22}` $m^{22}$
 * 下标:  `m_2` $m_2$ , `m_{22}` $m_{22}$
 
 * 中线\(分数\) : `\frac{1}{10}` $\frac{1}{10}$  , `\frac{n!}{k!(n-k)!} = \binom{n}{k}` $\frac{n!}{k!(n-k)!} = \binom{n}{k}$

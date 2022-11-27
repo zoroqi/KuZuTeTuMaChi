@@ -5,8 +5,11 @@ aliases:
 - 
 category:
 - gist
-language:
-- {{VALUE:language}}
+gist:
+  language:
+  - {{VALUE:language}}
+  tags:
+  - {{VALUE:tag}}
 tc:
 - gist
 ---
