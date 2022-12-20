@@ -19,7 +19,7 @@
 
 ## 特殊
 
-* 更大: `\big( \Big( \bigg( \Bigg(`  $\big( \Big( \bigg( \Bigg($ , $\Bigg\{ $
+* 更大: `\big( \Big( \bigg( \Bigg(`  $\big( \Big( \bigg( \Bigg($ , $\Bigg\{$
 
 ## 符号
 

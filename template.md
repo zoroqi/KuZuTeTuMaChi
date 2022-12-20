@@ -13,7 +13,7 @@ gist:
 tc:
 - gist
 ---
-{{MACRO:randomuuid}}
+{{MACRO:specialField}}
 
 ```{{VALUE:codeblock}}
 {{MVALUE}}

@@ -255,3 +255,5 @@ git filter-branch -f --subdirectory-filter dira
 ```
 
 这样可以快速将某个目录从大项目拆分出来, 并保存提交历史.
+
+### ![[20221207153825|git http 代理设置]]
