@@ -154,3 +154,7 @@
 | $\arcsin$ | ` \arcsin ` | $\coth$  | ` \coth `  |
 | $\arccos$ | ` \arccos ` | $\sec$   | ` \sec `   |
 | $\arctan$ | ` \arctan ` | $\csc$   | ` \csc `   |
+
+## 居中展示
+
+使用 `\begin{align}` 和 `\end{align}` 进行包裹
