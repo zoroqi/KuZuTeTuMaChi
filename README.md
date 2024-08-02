@@ -18,3 +18,10 @@
 3. [look and say sequence](./go/las) golang, look-and-say, 康威, 数学
 
 ## [正则表达式](./regex.md)
+
+## 目录
+
+```dataview
+table aliases
+from "KuZuTeTuMaChi"
+```
